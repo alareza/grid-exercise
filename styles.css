@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+/*
+- The container element has two columns
+- The container's second column is 4 times larger than the first column
+- The container element has a gap of 4px
+- The header element has two columns
+- The `ul` inside the menu element contains another grid
+- The `ul` inside the nav element contains another grid
+- The sidebar element has a gap of 50px
+- The text elements in the sidebar are centered with grid
+- The article element should set grid columns using `repeat` along with the `auto-fit` and `minmax` properties
+- The article columns should have a minimum value of 250px and a maximum of 1fr unit
+- The article element has a gap of 15px
+- The card elements inside the article container have a height of 200px
+- The header and footer span across both columns
+- The sidebar only spans across the first column
+- The nav and article elements only span across the second column
+*/
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 4px;
+}
+
+.header {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border: 1px solid red;
+}
+
+.footer {
+    grid-column: 1 / 3;
+    border: 1px solid black;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.header .menu {
+    border: 1px solid lightseagreen;
+    align-self: center;
+}
+.menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style-type: none;
+}
+
+.nav {
+    border: 1px solid purple;
+}
+
+.nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+}
+
+.sidebar {
+    display: grid;
+    gap: 50px;
+    border: 1px solid salmon;
+    grid-row: 2 / 4;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    border: 1px solid maroon;
+    grid-column: 2 / 3;
+  }
+
+.article .card {
+    height: 200px;
+    border: 1px solid yellowgreen;
+  }
+  
+  .card p {
+    padding: 5px;
+}
+  .sidebar div {
+    border: 1px solid navy;
+    display: grid;
+    align-items: center;
+}
+
+  
